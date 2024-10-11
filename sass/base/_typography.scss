@@ -1,0 +1,13 @@
+@use '../abstracts/variables' as v;
+
+h1 {
+    font-family: v.$heading-font-family;
+    font-size: v.$hero-h1-font-size;
+    color: v.$black;
+}
+
+p {
+    font-family: v.$body-font-family;
+    font-size: v.$hero-p-font-size;
+    color: v.$black;
+}
