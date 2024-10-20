@@ -2,7 +2,7 @@
 
 **Objective:** This repo was made for my portfolio project. In my portfolio, I show my skills through a concise layout and describe my working process for each featured project. I also talk a little about myself and show my past projects on a demo reel.
 
-![My Portfolio](images/readme.png)
+![My Portfolio](images/picture.png)
 
 ## Installation
 No installation required
