@@ -47,3 +47,25 @@
         margin: 50px 0 30px 0;
     }
 }
+
+// Projects
+
+#projects {
+    h2 {
+        margin: 50px 0 30px 0;
+    }
+
+    @media (min-width: 768px) {
+        position: relative;
+
+        .line {
+            background-color: #eaeaea;
+            position: absolute;
+            width: 1px;
+            left: 50%;
+            top: 12%;
+            height: 80%;
+        }
+    }
+}
+
