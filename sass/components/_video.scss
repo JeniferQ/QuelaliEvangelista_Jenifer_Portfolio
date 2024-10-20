@@ -1,0 +1,26 @@
+@use '../abstracts' as a;
+
+#video {
+    video {
+        width: 100%;
+    }
+
+    --plyr-color-main: #8257e7;
+    --plyr-control-icon-size: 20px;
+    --plyr-font-family: 'Albert Sans', Arial, Helvetica, sans-serif;
+    --plyr-control-spacing: 20px;
+    --plyr-control-radius: 50%;
+
+    .plyr__control--overlaid {
+        background: radial-gradient(circle, #8257e7 0%, #966af3 100%);
+        padding: 20px;
+    }
+
+    .icon--not-pressed {
+        padding-left: 3px;
+    }
+
+    .plyr__menu {
+        display: none;
+    }
+}
