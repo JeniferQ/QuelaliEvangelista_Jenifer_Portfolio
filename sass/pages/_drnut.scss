@@ -1,0 +1,51 @@
+@use '../abstracts' as a;
+
+#overview {
+    margin: 60px 0 30px 0;
+}
+
+.case-study {
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        opacity: .5;
+        margin-bottom: 10px;
+    }
+
+    .media-con {
+        margin: 30px 0;
+        width: 100%;
+
+        .media {
+            width: 100%;
+        }
+    }
+
+    //repeated content from project-card
+
+    .next {
+        justify-self: end;
+    }
+
+    a {
+        margin-top: 30px;
+        color: inherit;
+        text-decoration: none;
+    }
+
+    i {
+        margin-left: 10px;
+    }
+
+    .next:hover i {
+        animation: point 1s ease infinite;
+    }
+
+    @keyframes point {
+        0% {transform: translateX(0);}
+        50% {transform: translateX(5px);}
+        100% {transform: translateX(0);}
+    }
+}

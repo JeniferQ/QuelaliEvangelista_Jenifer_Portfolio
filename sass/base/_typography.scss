@@ -2,12 +2,27 @@
 
 h1, h2, h3 {
     font-family: v.$heading-font-family;
+}
+
+h1 {
+    font-size: 26pt;
+}
+
+h2 {
     font-size: 24pt;
+}
+
+h3 {
+    font-size: 20pt;
 }
 
 p, a, input {
     font-family: v.$body-font-family;
     font-size: 14pt;
+}
+
+.case-study a {
+    font-size: 16pt;
 }
 
 p, a {
