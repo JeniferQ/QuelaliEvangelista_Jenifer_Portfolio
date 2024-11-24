@@ -18,19 +18,42 @@
 }
 
 .hero-img {
-    width: 80%;
+    width: 220px;
+    height: 450px;
+    margin: 30px 0;
     justify-self: center;
-    padding-bottom: 30px;
-
-    img {
-        width: 100%;
-    }
+    position: relative;
 
     @media (min-width: 768px) {
         grid-row: 1/4;
         justify-self: end;
-        align-self: center;
-        padding-bottom: 0;
+    }
+
+    .mobile {
+        position: absolute;
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .scroll-container {
+        position: absolute;
+        border-radius: 40px;
+        width: 220px;
+        height: 449px;
+        display: block;
+        margin: 0 auto;
+        overflow-y: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        img {
+            width: 100%;
+            position: relative;
+            z-index: 0;
+        }
     }
 }
 
