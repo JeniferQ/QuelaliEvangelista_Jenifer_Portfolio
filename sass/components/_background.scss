@@ -1,0 +1,162 @@
+@use '../abstracts' as a;
+
+.wave-bc {
+    position: absolute;
+    width: 100%;
+}
+
+.wave-con {
+    position: absolute;
+    overflow: hidden;
+
+    .wave {
+        position: absolute;
+        height: 50%;
+        width: 200%;
+    }
+
+    .wave1 {
+        animation: slide 3s linear infinite;
+    }
+
+    .wave2 {
+        opacity: .6;
+        animation: slide 6s linear infinite;
+    }
+
+    .wave3 {
+        opacity: .4;
+        animation: slide 9s linear infinite;
+    }
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+#hero, #about {
+    .wave-bc {
+        background-color: a.$purple;
+    }
+
+    .wave {
+        background: url(/images/wave.svg) repeat-x;
+        background-size: 25% auto;
+    }
+}
+
+#hero {
+    .wave-bc {
+        height: 300px;
+    }
+
+    .wave-con {
+        height: 600px;
+        width: 768px;
+        
+        .wave {
+            background-position: top;
+        }
+    
+        .wave1 {
+            margin-top: 200px;
+        }
+    
+        .wave2 {
+            margin-top: 250px;
+        }
+    
+        .wave3 {
+            margin-top: 320px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .wave-bc {
+            height: 200px;
+        }
+
+        .wave-con {
+            height: 100%;
+            width: 100%;
+        
+            .wave {
+                background-position: bottom;
+            }
+        
+            .wave1 {
+                margin-top: 50px;
+            }
+        
+            .wave2 {
+                margin-top: 150px;
+            }
+        
+            .wave3 {
+                margin-top: 200px;
+            }
+        }
+    }
+}
+
+#about {
+    .wave-bc {
+        height: 70%;
+        bottom: 0;
+    }
+
+    .wave-con {
+        height: 50%;
+        width: 768px;
+        
+        .wave {
+            background-position: top;
+        }
+    
+        .wave1 {
+            margin-top: 30%;
+        }
+    
+        .wave2 {
+            margin-top: 20%;
+        }
+    
+        .wave3 {
+            margin-top: 10%;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .wave-bc {
+            height: 500px;
+        }
+
+        .wave-con {
+            top: 50px;
+            height: 400px;
+            width: 100%;
+        
+            .wave {
+                background-position: top;
+            }
+        
+            .wave1 {
+                margin-top: 150px;
+            }
+        
+            .wave2 {
+                margin-top: 100px;
+            }
+        
+            .wave3 {
+                margin-top: 50px;
+            }
+        }
+    }
+}

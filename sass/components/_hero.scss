@@ -1,18 +1,18 @@
 @use '../abstracts' as a;
 
 #hero {
+    position: relative;
+    color: a.$white;
+
     h1 {
-        margin: 50px 0 20px 0;
+        margin: 100px 0 20px 0;
     }
 
     p {
         margin-bottom: 50px;
-    }
 
-    @media (min-width: 768px) {
-        min-height: 500px;
-        h1 {
-            margin-top: 100px;
+        @media (min-width: 768px) {
+            margin-top: 20px;
         }
     }
 }
@@ -55,12 +55,4 @@
             z-index: 0;
         }
     }
-}
-
-.home#hero {
-    background-color: a.$lilac;
-}
-
-.case#hero {
-    background-color: rgb(199, 255, 255);
 }
