@@ -40,18 +40,18 @@
 }
 
 
-#hero, #about {
+#home-hero, #about {
     .wave-bc {
         background-color: a.$purple;
     }
 
     .wave {
-        background: url(/images/wave.svg) repeat-x;
+        background: url(../images/wave.svg) repeat-x;
         background-size: 25% auto;
     }
 }
 
-#hero {
+#home-hero {
     .wave-bc {
         height: 300px;
     }

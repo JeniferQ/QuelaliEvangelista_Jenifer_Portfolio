@@ -1,6 +1,6 @@
 @use '../abstracts' as a;
 
-#hero {
+#home-hero {
     position: relative;
     color: a.$white;
 
@@ -69,3 +69,4 @@
         width: 100%;
     }
 }
+
