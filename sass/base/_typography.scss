@@ -4,29 +4,8 @@ h1, h2, h3 {
     font-family: v.$heading-font-family;
 }
 
-h1 {
-    font-size: 26pt;
-}
-
-h2 {
-    font-size: 24pt;
-}
-
-h3 {
-    font-size: 20pt;
-}
-
 p, a, input {
     font-family: v.$body-font-family;
-    font-size: 14pt;
-}
-
-.case-study a {
-    font-size: 16pt;
-}
-
-p, a {
-    line-height: 30px;
 }
 
 body {
@@ -51,6 +30,34 @@ span {
 
 .download {
     color: v.$purple;
+}
+
+h1 {
+    font-size: 26pt;
+}
+
+h2 {
+    font-size: 22pt;
+}
+
+h3 {
+    font-size: 20pt;
+}
+
+p, input {
+    font-size: 14pt;
+}
+
+a {
+    font-size: 16pt;
+}
+
+i {
+    font-size: 18pt;
+}
+
+p, a {
+    line-height: 32px;
 }
 
 #menu.open a {
