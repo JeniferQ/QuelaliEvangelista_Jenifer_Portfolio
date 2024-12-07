@@ -28,7 +28,6 @@
     }
 
     a {
-        color: inherit;
         text-decoration: none;
     }
 
@@ -45,5 +44,16 @@
         50% {transform: translateX(5px);}
         100% {transform: translateX(0);}
     }
-        
+}
+
+.colour1 {
+    color: #C0070B;
+}
+
+.colour2 {
+    color: #C20943;
+}
+
+.colour3 {
+    color: #090E31;
 }

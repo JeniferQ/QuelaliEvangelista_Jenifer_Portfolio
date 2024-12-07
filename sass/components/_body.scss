@@ -5,8 +5,12 @@
     padding: 0;
 }
 
-.grid-con, .border {
+.grid-con, .contact-border {
     grid-column: 2/3;
+}
+
+.border {
+    border: 1px solid a.$gray;
 }
 
 .hidden {
