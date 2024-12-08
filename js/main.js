@@ -39,7 +39,36 @@
 })();
 
 (() => {
+    const slideUp = document.querySelectorAll('.slide-up'),
+    slideDown = document.querySelectorAll('.slide-down'),
+    fade = document.querySelectorAll('.fade');
 
+    gsap.registerPlugin(ScrollTrigger);
+        
+    slideUp.forEach(container => {
+        gsap.fromTo(container, {opacity: 0, y: 50},
+            {opacity: 1, y: 0, duration: 1, ease: 'power.out',
+                scrollTrigger: {trigger: container, start: 'top center'}
+            });
+    });
+
+    slideDown.forEach(container => {
+        gsap.fromTo(container, {opacity: 0, y: -50},
+            {opacity: 1, y: 0, duration: 1, ease: 'power.out',
+                scrollTrigger: {trigger: container, start: 'top center'}
+            });
+    });
+
+    fade.forEach(container => {
+        gsap.fromTo(container, {opacity: 0},
+            {opacity: 1, duration: 1, stagger: 1, ease: 'sine.out',
+                scrollTrigger: {trigger: container, start: 'top center'}
+            });
+    });
+})();
+
+
+(() => {
     const caseStudyVideo = document.querySelector("#case-video");
     const caseVideoCon = document.querySelector("#case-video-con");
 
@@ -50,7 +79,6 @@
     }
 
     checkVideoSource();
-
 })();
 
 console.log('JS is working');
