@@ -36,10 +36,10 @@
     }
 
     .point:hover i {
-        animation: point 1s ease infinite;
+        animation: pointRight 1s ease infinite;
     }
-
-    @keyframes point {
+    
+    @keyframes pointRight {
         0% {transform: translateX(0);}
         50% {transform: translateX(5px);}
         100% {transform: translateX(0);}
