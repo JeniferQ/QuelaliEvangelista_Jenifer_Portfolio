@@ -73,7 +73,7 @@ $caption_array = explode('|', $row2['section_caption']);
 
                 <p class="col-span-full m-col-start-2 m-col-end-7"><?php echo $row ['project_subtitle']; ?></p>
 
-                <a class="col-span-full m-col-start-2 m-col-end-4 button shadow">View Website</a>
+                <a class="col-span-full m-col-start-2 m-col-end-4 button shadow" href="<?php echo $row ['link']; ?>">View Website</a>
             </div>
 
             <div class="gradient" style="background: linear-gradient(90deg, <?php echo $row ['color']; ?> 40%, #ffffff00 100%)"></div>
