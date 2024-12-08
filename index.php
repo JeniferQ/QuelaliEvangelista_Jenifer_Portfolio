@@ -46,9 +46,9 @@ $results = mysqli_query($connect, $query);
             <nav class="col-span-full m-col-start-6 m-col-end-13" id="menu">
                 <h3 class="hidden">Header Navigation</h3>
                 <ul>
-                    <li><a href="#">Works</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="index.php#projects">Works</a></li>
+                    <li><a href="index.php#about">About</a></li>
+                    <li><a href="index.php#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -80,7 +80,7 @@ $results = mysqli_query($connect, $query);
                 <h2 class="col-span-full m-col-start-2 m-col-end-7"><span>Demo</span> Reel</h2>
 
                 <div class="col-span-full m-col-start-2 m-col-end-12 border" id="video-con">
-                    <video src="videos/demoreel.mp4" ></video>
+                    <video src="videos/demoreel.mp4" poster="images/thumbnail.jpg"></video>
                 </div>
             </div>
         </div>
@@ -176,6 +176,9 @@ $results = mysqli_query($connect, $query);
             <p class="col-span-full m-col-start-5 m-col-end-9">@2024 Jenifer Quelali</p>
         </div>
     </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     
     <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
     <script src="js/main.js"></script>
