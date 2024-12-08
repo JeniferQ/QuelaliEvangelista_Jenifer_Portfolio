@@ -20,6 +20,7 @@ $results = mysqli_query($connect, $query);
     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css"/>
     
     <script src="https://kit.fontawesome.com/983615787b.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
     
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/grid.css">
@@ -177,11 +178,9 @@ $results = mysqli_query($connect, $query);
         </div>
     </footer>
     
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    
-    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
-    <script src="js/main.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script defer src="js/main.js"></script>
 
 </body>
 
