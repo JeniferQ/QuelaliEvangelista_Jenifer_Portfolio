@@ -60,7 +60,7 @@ $results = mysqli_query($connect, $query);
             <div class="grid-con text-align">
                 <h1 class="col-span-full m-col-start-2 m-col-end-7">Hi there, I’m Jenifer!</h1>
 
-                <p class="col-span-full m-col-start-2 m-col-end-7">I’m a web designer that focuses on creating appealing websites through animation and motion graphics.</p>
+                <p class="col-span-full m-col-start-2 m-col-end-7">I’m a web designer based in London, Ontario that focuses on creating appealing websites through animation and motion graphics.</p>
 
                 <img class="col-span-full m-col-start-7 m-col-end-13" src="images/home-hero-tablet.png"
                 srcset="images/home-hero-mobile.png 400w, images/home-hero-tablet.png 600w"
@@ -108,7 +108,7 @@ $results = mysqli_query($connect, $query);
                     ?>
                 </div>
 
-                <div class="line"></div>
+                <div class="line fade"></div>
             </div>
         </div>
 
@@ -117,7 +117,7 @@ $results = mysqli_query($connect, $query);
 
                 <div class="col-span-full m-col-start-2 m-col-end-7 photo"><img class="border" src="images/home-about.jpg"  alt="A photo of me"></div>
 
-                <h2 class="col-span-full m-col-start-7 m-col-end-12">About</h2>
+                <h2 class="col-span-full m-col-start-7 m-col-end-12">About me</h2>
 
                 <p class="col-span-full m-col-start-2 m-col-end-7">I’m a web designer based in London, Ontario currently studying Interactive Media at Fanshawe College. 
                     As a professional, my objective is to create clean and user friendly websites that look great and 
