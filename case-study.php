@@ -58,9 +58,9 @@ $caption_array = explode('|', $row2['section_caption']);
             <nav class="col-span-full m-col-start-6 m-col-end-13" id="menu">
                 <h3 class="hidden">Header Navigation</h3>
                 <ul>
-                    <li><a href="#">Works</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="index.php#projects">Works</a></li>
+                    <li><a href="index.php#about">About</a></li>
+                    <li><a href="index.php#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -158,6 +158,9 @@ $caption_array = explode('|', $row2['section_caption']);
             <p class="col-span-full m-col-start-5 m-col-end-9">@2024 Jenifer Quelali</p>
         </div>
     </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     
     <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
     <script src="js/main.js"></script>
