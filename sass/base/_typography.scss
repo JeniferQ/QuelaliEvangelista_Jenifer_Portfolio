@@ -1,13 +1,65 @@
 @use '../abstracts/variables' as v;
 
-h1 {
+h1, h2, h3 {
     font-family: v.$heading-font-family;
-    font-size: v.$hero-h1-font-size;
+}
+
+p, a, input {
+    font-family: v.$body-font-family;
+}
+
+body {
     color: v.$black;
 }
 
-p {
-    font-family: v.$body-font-family;
-    font-size: v.$hero-p-font-size;
-    color: v.$black;
+span {
+    color: v.$purple;
+}
+
+#about {
+    color: v.$white;
+}
+
+.type {
+    color: v.$purple;
+}
+
+.submit {
+    color: v.$white;
+}
+
+.download {
+    color: v.$purple;
+}
+
+h1 {
+    font-size: 26pt;
+}
+
+h2 {
+    font-size: 22pt;
+}
+
+h3 {
+    font-size: 20pt;
+}
+
+p, input {
+    font-size: 14pt;
+}
+
+a {
+    font-size: 16pt;
+}
+
+i {
+    font-size: 18pt;
+}
+
+p, a {
+    line-height: 32px;
+}
+
+#menu.open a {
+    font-size: 30pt;
 }

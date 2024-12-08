@@ -1,0 +1,59 @@
+@use '../abstracts' as a;
+
+.project-flex{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .project-card {
+        width: 100%;
+        margin-bottom: 100px;
+
+        img {
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            width: 46%;
+        }
+    }
+
+    h3 {
+        margin: 40px 0 20px 0;
+    }
+
+    p {
+        margin-bottom: 40px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    i {
+        margin-left: 10px;
+    }
+
+    .point:hover i {
+        animation: pointRight 1s ease infinite;
+    }
+    
+    @keyframes pointRight {
+        0% {transform: translateX(0);}
+        50% {transform: translateX(5px);}
+        100% {transform: translateX(0);}
+    }
+}
+
+.colour1 {
+    color: #C0070B;
+}
+
+.colour2 {
+    color: #C20943;
+}
+
+.colour3 {
+    color: #090E31;
+}

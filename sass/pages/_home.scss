@@ -1,0 +1,158 @@
+@use '../abstracts' as a;
+
+// Hero
+
+#home-hero {
+    position: relative;
+    color: a.$white;
+
+    h1 {
+        margin: 100px 0 20px 0;
+    }
+
+    p {
+        margin-bottom: 50px;
+
+        @media (min-width: 768px) {
+            margin-top: 20px;
+        }
+    }
+
+    img {
+        width: 100%;
+
+        @media (min-width: 768px) {
+            margin-top: 50px;
+            grid-row: 1 / 4;
+        }
+    }
+}
+
+// Video
+
+.home#video {
+    padding-bottom: 30px;
+
+    h2 {
+        margin: 50px 0 30px 0;
+    }
+}
+
+// Projects
+
+#projects {
+    h2 {
+        margin: 50px 0 30px 0;
+    }
+
+    @media (min-width: 768px) {
+        position: relative;
+
+        .line {
+            background-color: #eaeaea;
+            position: absolute;
+            width: 1px;
+            left: 50%;
+            top: 12%;
+            height: 80%;
+        }
+    }
+}
+
+// About
+
+#about {
+    padding: 30px 0 50px 0;
+    position: relative;
+
+    h2, p {
+        margin-bottom: 30px;
+    }
+
+    a {
+        margin: 50px 0 40px 0;
+        justify-self: center;
+        text-align: center;
+        background-color: a.$white;
+    }
+    
+    a:hover {
+       background-color: #eaeaea;
+    }
+
+    @media (min-width: 768px) {
+        h2 {
+            align-self: center;
+        }
+    }
+}
+
+.photo {
+    display: flex;
+    justify-content: center;
+
+    img {
+        width: 80%;
+        border-radius: 100%;
+        margin-bottom: 50px;
+    }
+
+    @media (min-width: 768px) {
+        grid-row-start: 1;
+    }
+}
+
+
+// Contact
+
+#contact {
+    background-color: a.$white;
+
+    h2 {
+        margin: 30px 0;
+    }
+
+    p {
+        margin-bottom: 30px;
+    }
+
+    @media (min-width: 768px) {
+        box-shadow: inset 0 250px a.$purple;
+
+        .background {
+            border-radius: 10px;
+            background-color: a.$white;
+            padding: 20px;
+        }
+    
+        .contact-border {
+            border-width: 5px 5px 20px 5px;
+            border-style: solid;
+            border-color: a.$lighter-purple;
+            background-color: a.$lighter-purple;
+            border-radius: 10px;
+            margin: 0 20px;
+            max-width: 920px;
+            justify-self: center;
+        }
+    }
+}
+
+.email {
+    display: flex;
+    gap: 20px;
+    justify-self: center;
+    margin-bottom: 50px;
+
+    a {
+        align-self: center;
+    }
+
+    img {
+        width: 50px;
+    }
+
+    @media (min-width: 768px) {
+        justify-self: left;
+    }
+}

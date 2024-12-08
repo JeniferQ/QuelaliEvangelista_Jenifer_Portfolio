@@ -1,0 +1,39 @@
+@use '../abstracts' as a;
+
+.form {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+
+    input {
+        opacity: 1;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        padding: 15px 20px;
+        margin-bottom: 20px;
+        background-color: a.$lilac;
+    }
+
+    .type {
+        width: 100%;
+    }
+
+    .message {
+        padding-bottom: 120px;
+    }
+
+    .submit {
+        margin: 50px 0 0 auto;
+        background-color: a.$purple;
+    }
+
+    .submit:hover {
+        background-color: #6200d1;
+    }
+
+    @media (min-width: 768px) {
+        grid-row: 2/5;
+        margin: 0 0 80px 0;
+    }
+}
