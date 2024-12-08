@@ -37,7 +37,7 @@ $results = mysqli_query($connect, $query);
             <h2 class="hidden">Header</h2>
 
             <div class="col-start-1 col-end-4" id="logo">
-                <a href="index.html"><img src="images/mylogo.svg" alt="A logo of a swan besides the typography of my name, Jenifer Quelali."></a>
+                <a href="index.php"><img src="images/mylogo.svg" alt="A logo of a swan besides the typography of my name, Jenifer Quelali."></a>
             </div>
     
             <div class="col-start-4 col-end-5 m-col-start-12 m-col-end-13" id="burger">
@@ -56,7 +56,7 @@ $results = mysqli_query($connect, $query);
     </header>
 
     <main>
-        <div class="full-width-grid-con home" id="home-hero">
+        <div class="full-width-grid-con slide-down" id="home-hero">
             <div class="grid-con text-align">
                 <h1 class="col-span-full m-col-start-2 m-col-end-7">Hi there, I’m Jenifer!</h1>
 
@@ -76,7 +76,7 @@ $results = mysqli_query($connect, $query);
             </div>
         </div>
 
-        <div class="full-width-grid-con home" id="video">
+        <div class="full-width-grid-con home slide-up" id="video">
             <div class="grid-con text-align">
                 <h2 class="col-span-full m-col-start-2 m-col-end-7"><span>Demo</span> Reel</h2>
 
@@ -89,14 +89,14 @@ $results = mysqli_query($connect, $query);
         <div class="full-width-grid-con" id="projects">
 
             <div class="grid-con">
-                <h2 class="col-span-full m-col-start-2 m-col-end-12 text-align"><span>Featured</span> Projects</h2>
+                <h2 class="col-span-full m-col-start-2 m-col-end-12 text-align slide-up"><span>Featured</span> Projects</h2>
 
                 <div class="col-span-full m-col-start-2 m-col-end-12 project-flex">
 
                     <?php 
                     while($row = mysqli_fetch_array($results)) {
 
-                        echo '<div class="project-card">
+                        echo '<div class="project-card slide-up">
                                 <img class="border" src="images/'.$row['project_image'].'" alt="'.$row['project_image'].' icon">
 
                                 <h3>'.$row['project_title'].'</h3>
@@ -112,7 +112,7 @@ $results = mysqli_query($connect, $query);
             </div>
         </div>
 
-        <div class="full-width-grid-con" id="about">
+        <div class="full-width-grid-con slide-up" id="about">
             <div class="grid-con text-align">
 
                 <div class="col-span-full m-col-start-2 m-col-end-7 photo"><img class="border" src="images/home-about.jpg"  alt="A photo of me"></div>
@@ -139,7 +139,7 @@ $results = mysqli_query($connect, $query);
             </div>
         </div>
 
-        <div class="full-width-grid-con" id="contact">
+        <div class="full-width-grid-con fade" id="contact">
             <div class="contact-border">
                 <div class="grid-con background text-align">
                     <h2 class="col-span-full m-col-start-2 m-col-end-7">Contact</h2>
@@ -148,12 +148,12 @@ $results = mysqli_query($connect, $query);
     
                     <div class="col-span-full m-col-start-2 m-col-end-7 email"><img src="images/mail.svg"  alt="A mail symbol inside a circle"><a>j_quelali@gmail.com</a></div>
                     
-                    <div class="col-span-full m-col-start-7 m-col-end-12 form">
-                        <input class="type" id="name" type="text" placeholder="Name">
-                        <input class="type" id="email" type="text" placeholder="Email">
-                        <input class="type message" id="message" type="text" placeholder="Message">
+                    <form class="col-span-full m-col-start-7 m-col-end-12 form" method="post" action="contact.php">
+                        <input class="type" id="name" type="text" name="full_name" placeholder="Name">
+                        <input class="type" id="email" type="text" name="email" placeholder="Email">
+                        <input class="type message" id="message" type="text" name="msg" placeholder="Message">
                         <input class="submit button shadow" type="submit" value="Send">
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

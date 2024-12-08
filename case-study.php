@@ -68,7 +68,7 @@ $caption_array = explode('|', $row2['section_caption']);
     </header>
 
     <main>
-        <div class="full-width-grid-con case case-hero" style="background: url(images/<?php echo $row ['hero_image']; ?>) repeat">
+        <div class="full-width-grid-con case case-hero slide-down" style="background: url(images/<?php echo $row ['hero_image']; ?>) repeat">
             <div class="grid-con text-align">
                 <h1 class="col-span-full m-col-start-2 m-col-end-7"><?php echo $row ['project_title']; ?></h1>
 
@@ -81,7 +81,7 @@ $caption_array = explode('|', $row2['section_caption']);
             <div class="wave-divider"></div>
         </div>
 
-        <div class="full-width-grid-con case-study" id="overview">
+        <div class="full-width-grid-con case-study slide-up" id="overview">
             <div class="grid-con">
                 <h2 class="col-span-full m-col-start-2 m-col-end-7">Project Overview</h2>
 
@@ -89,7 +89,7 @@ $caption_array = explode('|', $row2['section_caption']);
             </div>
         </div>
 
-        <div class="full-width-grid-con case-study">
+        <div class="full-width-grid-con case-study slide-up">
             <div class="grid-con">
                 <h2 class="col-span-full m-col-start-2 m-col-end-7">Process</h2>
 
@@ -109,7 +109,7 @@ $caption_array = explode('|', $row2['section_caption']);
             </div>
         </div>
 
-        <div class="full-width-grid-con case-study" id="video">
+        <div class="full-width-grid-con case-study slide-up" id="video">
             <div class="grid-con">
                 <h3 class="col-span-full m-col-start-2 m-col-end-7"><?php echo $row ['video_subtitle']; ?></h3>
 
@@ -121,7 +121,7 @@ $caption_array = explode('|', $row2['section_caption']);
             </div>
         </div>
 
-        <div class="full-width-grid-con case-study" id="outcome">
+        <div class="full-width-grid-con case-study slide-up" id="outcome">
             <div class="grid-con">
                 <h2 class="col-span-full m-col-start-2 m-col-end-7">Outcome</h2>
 
@@ -135,10 +135,7 @@ $caption_array = explode('|', $row2['section_caption']);
                     <i class="fa-solid fa-arrow-right-long"></i>Return to Works
                 </a>
             </div>
-
         </div>
-
-        <div class="full-width-grid-con button"></div>
 
     </main>
 
