@@ -2,7 +2,7 @@
 
 **Objective:** This repo was made for my portfolio project. In my portfolio, I show my skills through a concise layout and describe my working process for each featured project. I also talk a little about myself and show my past projects on a demo reel.
 
-![My Portfolio](images/picture.png)
+![My Portfolio](images/picture.jpg)
 
 ## Installation
 No installation required
@@ -19,7 +19,7 @@ Just enjoy!
 
 ## History
 
-October 2024
+October 2024, November 2024, December 2024
 
 ## Credits
 Jenifer Quelali Evangelista
