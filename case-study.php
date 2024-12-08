@@ -48,7 +48,7 @@ $caption_array = explode('|', $row2['section_caption']);
             <h2 class="hidden">Header</h2>
 
             <div class="col-start-1 col-end-4" id="logo">
-                <a href="index.html"><img src="images/mylogo.svg" alt="A logo of a swan besides the typography of my name, Jenifer Quelali."></a>
+                <a href="index.php"><img src="images/mylogo.svg" alt="A logo of a swan besides the typography of my name, Jenifer Quelali."></a>
             </div>
     
             <div class="col-start-4 col-end-5 m-col-start-12 m-col-end-13" id="burger">
@@ -67,20 +67,17 @@ $caption_array = explode('|', $row2['section_caption']);
     </header>
 
     <main>
-        <div class="full-width-grid-con case" id="case-hero">
+        <div class="full-width-grid-con case case-hero" style="background: url(images/<?php echo $row ['hero_image']; ?>) repeat">
             <div class="grid-con text-align">
-            <h1 class="col-span-full m-col-start-2 m-col-end-7">
-                    <?php echo $row ['project_title']; ?>
-                </h1>
+                <h1 class="col-span-full m-col-start-2 m-col-end-7"><?php echo $row ['project_title']; ?></h1>
 
-                <p class="col-span-full m-col-start-2 m-col-end-7">
-                    <?php echo $row ['project_subtitle']; ?>
-                </p>
+                <p class="col-span-full m-col-start-2 m-col-end-7"><?php echo $row ['project_subtitle']; ?></p>
 
-                <div class="col-span-full m-col-start-7 m-col-end-12 hero-img">
-                    <img class="case" src="images/<?php echo $row ['hero_image']; ?>" alt="An image">
-                </div>
+                <a class="col-span-full m-col-start-2 m-col-end-4 button shadow">View Website</a>
             </div>
+
+            <div class="gradient" style="background: linear-gradient(90deg, <?php echo $row ['color']; ?> 40%, #ffffff00 100%)"></div>
+            <div class="wave-divider"></div>
         </div>
 
         <div class="full-width-grid-con case-study" id="overview">
@@ -94,36 +91,31 @@ $caption_array = explode('|', $row2['section_caption']);
         <div class="full-width-grid-con case-study">
             <div class="grid-con">
                 <h2 class="col-span-full m-col-start-2 m-col-end-7">Process</h2>
-                
+
                 <?php 
                     for($i = 0; $i < count($description_array); $i++) {
 
-                        echo '<h3 class="col-span-full m-col-start-2 m-col-end-7">'
-                        .$subtitle_array[$i].
-                        '</h3><p class="col-span-full m-col-start-2 m-col-end-12">'
-                        .$description_array[$i].
-                        '</p><div class="col-span-full m-col-start-3 m-col-end-11 media-con"><img class="media" src="images/'
-                        .$file_array[$i].
-                        '" alt="'
-                        .$caption_array[$i].
-                        '"></div>';
+                        echo '<h3 class="col-span-full m-col-start-2 m-col-end-7">'.$subtitle_array[$i].'</h3>
+
+                        <p class="col-span-full m-col-start-2 m-col-end-12">'.$description_array[$i].'</p>
+
+                        <div class="col-span-full m-col-start-3 m-col-end-11 media-con">
+                        <img class="media border" src="images/'.$file_array[$i].'" alt="'.$caption_array[$i].'">
+                        </div>';
                     }
                 ?>
+
             </div>
         </div>
 
-        <div class="full-width-grid-con case-study">
+        <div class="full-width-grid-con case-study" id="video">
             <div class="grid-con">
-                <h2 class="col-span-full m-col-start-2 m-col-end-7">
-                    <?php echo $row ['video_subtitle']; ?>
-                </h2>
+                <h3 class="col-span-full m-col-start-2 m-col-end-7"><?php echo $row ['video_subtitle']; ?></h3>
 
-                <p class="col-span-full m-col-start-2 m-col-end-12">
-                    <?php echo $row ['video_description']; ?>
-                </p>
+                <p class="col-span-full m-col-start-2 m-col-end-12"><?php echo $row ['video_description']; ?></p>
 
-                <div class="col-span-full m-col-start-3 m-col-end-11 media-con">
-                    <video class="media" src="videos/<?php echo $row ['video_file']?>">
+                <div class="col-span-full m-col-start-3 m-col-end-11 video-con" id="case-video-con">
+                    <video class="media border" id="case-video" src="videos/<?php echo $row ['video_file']?>" alt="<?php echo $row ['project_title']; ?>'s commercial video">
                 </div>
             </div>
         </div>
@@ -132,15 +124,15 @@ $caption_array = explode('|', $row2['section_caption']);
             <div class="grid-con">
                 <h2 class="col-span-full m-col-start-2 m-col-end-7">Outcome</h2>
 
-                <p class="col-span-full m-col-start-2 m-col-end-12">
-                    <?php echo $row ['outcome']; ?>
-                </p>
+                <p class="col-span-full m-col-start-2 m-col-end-12"><?php echo $row ['outcome']; ?></p>
 
                 <div class="col-span-full m-col-start-2 m-col-end-12 media-con">
-                    <img class="media" src="images/<?php echo $row ['outcome_image']?>">
+                    <img class="media border" src="images/<?php echo $row ['outcome_image']; ?>" alt="<?php echo $row ['project_title']; ?>'s final result.">
                 </div>
 
-                <a class="col-start-3 col-end-5 m-col-start-9 m-col-end-12 next" href="#">View Next<i class="fa-solid fa-arrow-right-long"></i></a>
+                <a class="col-start-1 col-end-3 m-col-start-2 m-col-end-6 back" href="index.php">
+                    <i class="fa-solid fa-arrow-right-long"></i>Return to Works
+                </a>
             </div>
 
         </div>
@@ -154,9 +146,13 @@ $caption_array = explode('|', $row2['section_caption']);
 
         <div class="grid-con text-align">
             <div class="col-span-full m-col-start-4 m-col-end-10 icons">
-                <a href="#"><img src="images/linkedin-in-brands-solid.svg"  alt="Linkedin logo"></a>
-                <a href="#"><img src="images/x-twitter-brands-solid.svg" alt="X logo"></a>
-                <a href="#"><img src="images/instagram-brands-solid.svg" alt="Instagram logo"></a>
+                <a href="https://www.linkedin.com/in/jenifer-quelali-evangelista/">
+                    <img src="images/linkedin-in-brands-solid.svg" alt="Linkedin logo">
+                </a>
+
+                <a href="https://github.com/JeniferQ">
+                    <img src="images/github-brands-solid.svg" alt="Github logo">
+                </a>
             </div>
 
             <p class="col-span-full m-col-start-5 m-col-end-9">@2024 Jenifer Quelali</p>
