@@ -36,4 +36,19 @@
     window.addEventListener('resize', resizeMenu);
 })();
 
+(() => {
+
+    const caseStudyVideo = document.querySelector("#case-video");
+    const caseVideoCon = document.querySelector("#case-video-con");
+
+    function checkVideoSource() {
+        if (caseStudyVideo.getAttribute("src") === "videos/") {
+            caseVideoCon.classList.add("hidden");
+        }
+    }
+
+    checkVideoSource();
+
+})();
+
 console.log('JS is working');
