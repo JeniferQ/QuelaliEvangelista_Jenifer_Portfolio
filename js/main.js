@@ -1,6 +1,7 @@
 (() => {
     const burger = document.querySelector('#burger img'),
     menu = document.querySelector('#menu'),
+    menuBtns = document.querySelectorAll('#menu a'),
     body = document.querySelector('body');
 
     const player = new Plyr('video');
@@ -32,6 +33,7 @@
         }
     }
 
+    menuBtns.forEach(button => button.addEventListener('click', removeMenu));
     burger.addEventListener('click', toggleMenu);
     window.addEventListener('resize', resizeMenu);
 })();
