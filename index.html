@@ -47,15 +47,23 @@
     </header>
 
     <main>
-        <div class="full-width-grid-con" id="hero">
+        <div class="full-width-grid-con home" id="home-hero">
             <div class="grid-con text-align">
                 <h1 class="col-span-full m-col-start-2 m-col-end-7">Hi there, I’m Jenifer!</h1>
 
                 <p class="col-span-full m-col-start-2 m-col-end-7">I’m a web designer that focuses on creating appealing websites through animation and motion graphics.</p>
 
-                <div class="col-span-full m-col-start-7 m-col-end-12 hero-img">
-                    <img class="mobile" src="images/placeholder.png" alt="A phone">
-                </div>
+                <img class="col-span-full m-col-start-7 m-col-end-13" src="images/home-hero-tablet.png"
+                srcset="images/home-hero-mobile.png 400w, images/home-hero-tablet.png 600w"
+                sizes="(max-width: 768px) 400px, 600px" alt="Floating phones featuring the Dr. Nut products page">
+            </div>
+
+            <div class="wave-bc"></div>
+
+            <div class="col-span-full wave-con">
+                <div class="wave wave1"></div>
+                <div class="wave wave2"></div>
+                <div class="wave wave3"></div>
             </div>
         </div>
 
@@ -63,8 +71,8 @@
             <div class="grid-con text-align">
                 <h2 class="col-span-full m-col-start-2 m-col-end-7"><span>Demo</span> Reel</h2>
 
-                <div class="col-span-full m-col-start-2 m-col-end-12" id="video-con">
-                    <video src="videos/12492496_1280_720_60fps.mp4" ></video>
+                <div class="col-span-full m-col-start-2 m-col-end-12 border" id="video-con">
+                    <video src="videos/demoreel.mp4" ></video>
                 </div>
             </div>
         </div>
@@ -74,47 +82,48 @@
             <div class="grid-con">
                 <h2 class="col-span-full m-col-start-2 m-col-end-12 text-align"><span>Featured</span> Projects</h2>
 
+                <div class="col-span-full m-col-start-2 m-col-end-12 project-flex">
+                    <div class="project-card">
+                        <img class="shadow"src="images/drnut-icon.jpg" alt="Dr.Nut's icon">
+                        <h3>Dr. Nut</h3>
+                        <p>A complete rebrand and website build for a soft drink company from the 30’s.</p>
+                        
+                        <a class="point colour1" href="case-study.html">
+                            Read Case Study<i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <img class="shadow"src="images/kavorka-icon.jpg" alt="Kavorka's icon">
+                        <h3>Kavorka</h3>
+                        <p>A website made for a cosmetics brand focused on selling vegan beauty products.</p>
+                        
+                        <a class="point colour2" href="case-study.html">
+                            Read Case Study<i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <img class="shadow"src="images/comet-icon.jpg" alt="Comet's icon">
+                        <h3>Comet</h3>
+                        <p>A premium earbud website featuring a real-time 3D model viewer for interactive product exploration.</p>
+
+                        <a class="point colour3" href="case-study.html">
+                            Read Case Study<i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+
                 <div class="line"></div>
-
-                <div class="col-span-full  m-col-start-2 m-col-end-7 project">
-                    <div class="project-img shadow"><img src="images/placeholder.png"  alt="A placeholder image"></div>
-
-                    <h3>Comet</h3>
-                    <p>A premium earbud website featuring a real-time 3D model viewer for interactive product exploration.</p>
-                    <a href="#" class="point">Read Case Study<i class="fa-solid fa-arrow-right-long"></i></a>
-                </div>
-
-                <div class="col-span-full m-col-start-7 m-col-end-12 project">
-                    <div class="project-img shadow"><img src="images/placeholder.png"  alt="A placeholder image"></div>
-
-                    <h3>Dr. Nut</h3>
-                    <p>A complete rebrand and website build for a soft drink company from the 30’s.</p>
-                    <a href="#" class="point">Read Case Study<i class="fa-solid fa-arrow-right-long"></i></a>
-                </div>
-
-                <div class="col-span-full m-col-start-2 m-col-end-7 project">
-                    <div class="project-img shadow"><img src="images/placeholder.png"  alt="A placeholder image"></div>
-
-                    <h3>Kavorka</h3>
-                    <p>A website made for a cosmetics brand focused on selling vegan beauty products.</p>
-                    <a href="#" class="point">Read Case Study<i class="fa-solid fa-arrow-right-long"></i></a>
-                </div>
-
-                <div class="col-span-full m-col-start-7 m-col-end-12 project">
-                    <div class="project-img shadow"><img src="images/placeholder.png"  alt="A placeholder image"></div>
-
-                    <h3>Music Mixer</h3>
-                    <p>A website constructed to simulate a boombox, featuring a music making interface.</p>
-                    <a href="#" class="point">Read Case Study<i class="fa-solid fa-arrow-right-long"></i></a>
-                </div>
             </div>
         </div>
 
         <div class="full-width-grid-con" id="about">
             <div class="grid-con text-align">
-                <h2 class="col-span-full m-col-start-7 m-col-end-12">About</h2>
 
-                <div class="col-span-full m-col-start-2 m-col-end-7 photo"><img src="images/placeholder.png"  alt="A photo of me"></div>
+                <div class="col-span-full m-col-start-2 m-col-end-7 photo"><img class="border" src="images/home-about.jpg"  alt="A photo of me"></div>
+
+                <h2 class="col-span-full m-col-start-7 m-col-end-12">About</h2>
 
                 <p class="col-span-full m-col-start-2 m-col-end-7">I’m a web designer based in London, Ontario currently studying Interactive Media at Fanshawe College. 
                     As a professional, my objective is to create clean and user friendly websites that look great and 
@@ -126,10 +135,18 @@
 
                 <a class="col-span-full m-col-start-5 m-col-end-9 download button shadow">Download CV</a>
             </div>
+
+            <div class="wave-bc"></div>
+
+            <div class="col-span-full wave-con">
+                <div class="wave wave1"></div>
+                <div class="wave wave2"></div>
+                <div class="wave wave3"></div>
+            </div>
         </div>
 
         <div class="full-width-grid-con" id="contact">
-            <div class="border">
+            <div class="contact-border">
                 <div class="grid-con background text-align">
                     <h2 class="col-span-full m-col-start-2 m-col-end-7">Contact</h2>
     
@@ -154,9 +171,13 @@
 
         <div class="grid-con text-align">
             <div class="col-span-full m-col-start-4 m-col-end-10 icons">
-                <a href="#"><img src="images/linkedin-in-brands-solid.svg"  alt="Linkedin logo"></a>
-                <a href="#"><img src="images/x-twitter-brands-solid.svg" alt="X logo"></a>
-                <a href="#"><img src="images/instagram-brands-solid.svg" alt="Instagram logo"></a>
+                <a href="https://www.linkedin.com/in/jenifer-quelali-evangelista/">
+                    <img src="images/linkedin-in-brands-solid.svg" alt="Linkedin logo">
+                </a>
+
+                <a href="https://github.com/JeniferQ">
+                    <img src="images/github-brands-solid.svg" alt="Github logo">
+                </a>
             </div>
 
             <p class="col-span-full m-col-start-5 m-col-end-9">@2024 Jenifer Quelali</p>
