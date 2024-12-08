@@ -61,12 +61,9 @@ $results = mysqli_query($connect, $query);
 
                 <p class="col-span-full m-col-start-2 m-col-end-7">I’m a web designer that focuses on creating appealing websites through animation and motion graphics.</p>
 
-                <div class="col-span-full m-col-start-7 m-col-end-12 hero-img">
-                    <img class="mobile" src="images/phone.svg" alt="A phone">
-                    <div class="scroll-container">
-                        <img src="images/hackathon.jpg" alt="Hackathon home page">
-                    </div>
-                </div>
+                <img class="col-span-full m-col-start-7 m-col-end-13" src="images/home-hero-tablet.png"
+                srcset="images/home-hero-mobile.png 400w, images/home-hero-tablet.png 600w"
+                sizes="(max-width: 768px) 400px, 600px" alt="Floating phones featuring the Dr. Nut products page">
             </div>
 
             <div class="wave-bc"></div>
@@ -78,12 +75,12 @@ $results = mysqli_query($connect, $query);
             </div>
         </div>
 
-        <div class="full-width-grid-con" id="video">
+        <div class="full-width-grid-con home" id="video">
             <div class="grid-con text-align">
                 <h2 class="col-span-full m-col-start-2 m-col-end-7"><span>Demo</span> Reel</h2>
 
-                <div class="col-span-full m-col-start-2 m-col-end-12" id="video-con">
-                    <video src="videos/12492496_1280_720_60fps.mp4" ></video>
+                <div class="col-span-full m-col-start-2 m-col-end-12 border" id="video-con">
+                    <video src="videos/demoreel.mp4" ></video>
                 </div>
             </div>
         </div>
@@ -92,24 +89,22 @@ $results = mysqli_query($connect, $query);
 
             <div class="grid-con">
                 <h2 class="col-span-full m-col-start-2 m-col-end-12 text-align"><span>Featured</span> Projects</h2>
-                
+
                 <div class="col-span-full m-col-start-2 m-col-end-12 project-flex">
-                <?php 
-                while($row = mysqli_fetch_array($results)) {
 
-                echo '<div class="project-card">
-                        <img src="images/'.$row['project_image'].'" alt="Icon">
+                    <?php 
+                    while($row = mysqli_fetch_array($results)) {
 
-                        <h3>'.$row['project_title'].'</h3>
-                        <p>'.$row['project_description'].'</p>
-                        
-                        <a class="point" style="color:'.$row['color'].'" href="case-study.php?id='.$row['project'].'">
-                        Read Case Study<i class="fa-solid fa-arrow-right-long"></i>
-                        </a>
-                    </div>';
-                }
+                        echo '<div class="project-card">
+                                <img class="border" src="images/'.$row['project_image'].'" alt="'.$row['project_image'].' icon">
 
-                ?>
+                                <h3>'.$row['project_title'].'</h3>
+                                <p>'.$row['project_description'].'</p>
+                                
+                                <a class="point" style="color:'.$row['color'].'" href="case-study.php?id='.$row['project'].'">Read Case Study<i class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>';
+                        }
+                    ?>
                 </div>
 
                 <div class="line"></div>
@@ -119,7 +114,7 @@ $results = mysqli_query($connect, $query);
         <div class="full-width-grid-con" id="about">
             <div class="grid-con text-align">
 
-                <div class="col-span-full m-col-start-2 m-col-end-7 photo"><img src="images/placeholder.png"  alt="A photo of me"></div>
+                <div class="col-span-full m-col-start-2 m-col-end-7 photo"><img class="border" src="images/home-about.jpg"  alt="A photo of me"></div>
 
                 <h2 class="col-span-full m-col-start-7 m-col-end-12">About</h2>
 
@@ -144,7 +139,7 @@ $results = mysqli_query($connect, $query);
         </div>
 
         <div class="full-width-grid-con" id="contact">
-            <div class="border">
+            <div class="contact-border">
                 <div class="grid-con background text-align">
                     <h2 class="col-span-full m-col-start-2 m-col-end-7">Contact</h2>
     
@@ -169,9 +164,13 @@ $results = mysqli_query($connect, $query);
 
         <div class="grid-con text-align">
             <div class="col-span-full m-col-start-4 m-col-end-10 icons">
-                <a href="#"><img src="images/linkedin-in-brands-solid.svg"  alt="Linkedin logo"></a>
-                <a href="#"><img src="images/x-twitter-brands-solid.svg" alt="X logo"></a>
-                <a href="#"><img src="images/instagram-brands-solid.svg" alt="Instagram logo"></a>
+                <a href="https://www.linkedin.com/in/jenifer-quelali-evangelista/">
+                    <img src="images/linkedin-in-brands-solid.svg" alt="Linkedin logo">
+                </a>
+
+                <a href="https://github.com/JeniferQ">
+                    <img src="images/github-brands-solid.svg" alt="Github logo">
+                </a>
             </div>
 
             <p class="col-span-full m-col-start-5 m-col-end-9">@2024 Jenifer Quelali</p>
