@@ -36,7 +36,7 @@ $results = mysqli_query($connect, $query);
             <h2 class="hidden">Header</h2>
 
             <div class="col-start-1 col-end-4" id="logo">
-                <a href="index.html"><img src="images/mylogo.svg" alt="A logo of a swan besides the typography of my name, Jenifer Quelali."></a>
+                <a href="index.php"><img src="images/mylogo.svg" alt="A logo of a swan besides the typography of my name, Jenifer Quelali."></a>
             </div>
     
             <div class="col-start-4 col-end-5 m-col-start-12 m-col-end-13" id="burger">
@@ -147,12 +147,12 @@ $results = mysqli_query($connect, $query);
     
                     <div class="col-span-full m-col-start-2 m-col-end-7 email"><img src="images/mail.svg"  alt="A mail symbol inside a circle"><a>j_quelali@gmail.com</a></div>
                     
-                    <div class="col-span-full m-col-start-7 m-col-end-12 form">
-                        <input class="type" id="name" type="text" placeholder="Name">
-                        <input class="type" id="email" type="text" placeholder="Email">
-                        <input class="type message" id="message" type="text" placeholder="Message">
+                    <form class="col-span-full m-col-start-7 m-col-end-12 form" method="post" action="contact.php">
+                        <input class="type" id="name" type="text" name="full_name" placeholder="Name">
+                        <input class="type" id="email" type="text" name="email" placeholder="Email">
+                        <input class="type message" id="message" type="text" name="msg" placeholder="Message">
                         <input class="submit button shadow" type="submit" value="Send">
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
