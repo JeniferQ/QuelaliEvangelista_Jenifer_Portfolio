@@ -159,7 +159,7 @@ $stmt->execute();
     
                     <div class="col-span-full m-col-start-2 m-col-end-7 email"><img src="images/mail.svg"  alt="A mail symbol inside a circle"><a>j_quelali@gmail.com</a></div>
                     
-                    <form class="col-span-full m-col-start-7 m-col-end-12 form" id="contact-form" action="../admin/sendmail.php">
+                    <form class="col-span-full m-col-start-7 m-col-end-12 form" id="contact-form" action="sendmail.php">
                         <input class="type" id="name" type="text" name="name" placeholder="Name">
                         <input class="type" id="email" type="text" name="email" placeholder="Email">
                         <input class="type message" id="message" type="text" name="message" placeholder="Message">
