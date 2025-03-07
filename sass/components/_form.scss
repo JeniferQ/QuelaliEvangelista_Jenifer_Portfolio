@@ -1,6 +1,9 @@
 @use '../abstracts' as a;
 
 .form {
+    @include a.flex;
+    @include a.flex-wrap;
+    
     margin-top: 30px;
     display: flex;
     flex-wrap: wrap;
@@ -26,6 +29,7 @@
     .submit {
         margin: 30px 0 0 auto;
         background-color: a.$purple;
+        cursor: pointer;
     }
 
     .submit:hover {
@@ -77,6 +81,8 @@
     }
 
     .form-cell {
+        @include a.flex;
+
         display: flex;
         align-items: center;
         margin-bottom: 20px;

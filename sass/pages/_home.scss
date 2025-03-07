@@ -88,6 +88,8 @@
 }
 
 .photo {
+    @include a.flex;
+
     display: flex;
     justify-content: center;
 
@@ -147,6 +149,8 @@
 }
 
 .email {
+    @include a.flex;
+
     display: flex;
     gap: 20px;
     justify-self: center;

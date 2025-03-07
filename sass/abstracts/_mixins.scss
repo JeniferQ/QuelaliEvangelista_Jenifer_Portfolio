@@ -1,0 +1,14 @@
+@mixin flex {
+    display: flex;
+    -ms-flexbox: flex;
+}
+
+@mixin flex-wrap {
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+}
+
+@mixin red {
+    background-color: red;
+}
+
