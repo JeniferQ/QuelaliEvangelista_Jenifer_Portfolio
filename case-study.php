@@ -2,28 +2,50 @@
 <html lang="en">
 
 <?php
+
 require_once('includes/connect.php');
 
-mysqli_query($connect, "SET SESSION group_concat_max_len = 10000");
+$connection->exec("SET SESSION group_concat_max_len = 10000");
 
-$query1 = 'SELECT * FROM projects WHERE id ='.$_GET['id'];
-$query2 = "SELECT GROUP_CONCAT(case_subtitle SEPARATOR '|') AS section_subtitle, GROUP_CONCAT(case_description SEPARATOR '|') AS section_description, GROUP_CONCAT(case_file SEPARATOR '|') AS section_file, GROUP_CONCAT(alt_text SEPARATOR '|') AS section_caption FROM section, projects WHERE projects_ID = projects.id AND projects.id = ".$_GET['id']; 
+$query1 = 'SELECT * FROM projects WHERE id = :portfolioid';
+$query2 = "SELECT GROUP_CONCAT(paragraph_title SEPARATOR '|') AS title, GROUP_CONCAT(paragraph_description SEPARATOR '|') AS description, GROUP_CONCAT(paragraph_file SEPARATOR '|') AS file, GROUP_CONCAT(paragraph_file_description SEPARATOR '|') AS file_description FROM paragraphs, projects WHERE project_id = projects.id AND projects.id = :portfolioid"; 
 
-$results = mysqli_query($connect, $query1);
-$results2 = mysqli_query($connect, $query2);
+$stmt1 = $connection->prepare($query1);
+$stmt2 = $connection->prepare($query2);
 
-$row = mysqli_fetch_assoc($results);
-$row2 = mysqli_fetch_assoc($results2);
+$portfolioid = $_GET['id'];
 
-$subtitle_array = explode('|', $row2['section_subtitle']);
-$description_array = explode('|', $row2['section_description']);
-$file_array = explode('|', $row2['section_file']);
-$caption_array = explode('|', $row2['section_caption']);
+$stmt1->bindParam(':portfolioid', $portfolioid, PDO::PARAM_INT);
+$stmt2->bindParam(':portfolioid', $portfolioid, PDO::PARAM_INT);
+
+$stmt1->execute();
+$stmt2->execute();
+    
+$row1 = $stmt1->fetch(PDO::FETCH_ASSOC);
+$row2 = $stmt2->fetch(PDO::FETCH_ASSOC);
+
+if (!empty($row2['title']) && !empty($row2['description']) && !empty($row2['file']) && !empty($row2['file_description'])) {
+    $title_array = explode('|', $row2['title']);
+    $desc_array = explode('|', $row2['description']);
+    $file_array = explode('|', $row2['file']);
+    $file_desc_array = explode('|', $row2['file_description']);
+} else {
+    $title_array = [];
+    $desc_array = [];
+    $file_array = [];
+    $file_desc_array = [];
+}
+
+$stmt1 = null;
+$stmt2 = null;
+
 ?>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" type="image/x-icon" href="images/favicon.svg">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,6 +58,10 @@ $caption_array = explode('|', $row2['section_caption']);
     
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/grid.css">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script type="module" defer src="js/casestudy.js"></script>
 
     <title>Jenifer Quelali - Portfolio</title>
 </head>
@@ -68,16 +94,16 @@ $caption_array = explode('|', $row2['section_caption']);
     </header>
 
     <main>
-        <div class="full-width-grid-con case case-hero slide-down" style="background: url(images/<?php echo $row ['hero_image']; ?>) repeat">
+        <div class="full-width-grid-con case case-hero slide-down" style="background: url(images/<?php echo $row1 ['hero_bc']; ?>) repeat">
             <div class="grid-con text-align">
-                <h1 class="col-span-full m-col-start-2 m-col-end-7"><?php echo $row ['project_title']; ?></h1>
+                <h1 class="col-span-full m-col-start-2 m-col-end-7"><?php echo $row1 ['title']; ?></h1>
 
-                <p class="col-span-full m-col-start-2 m-col-end-7"><?php echo $row ['project_subtitle']; ?></p>
+                <p class="col-span-full m-col-start-2 m-col-end-7"><?php echo $row1 ['brief']; ?></p>
 
-                <a class="col-span-full m-col-start-2 m-col-end-4 button shadow" href="<?php echo $row ['link']; ?>">View Website</a>
+                <a class="col-span-full m-col-start-2 m-col-end-4 button shadow" href="<?php echo $row1 ['link']; ?>">View Result</a>
             </div>
 
-            <div class="gradient" style="background: linear-gradient(90deg, <?php echo $row ['color']; ?> 40%, #ffffff00 100%)"></div>
+            <div class="gradient" style="background: linear-gradient(90deg, <?php echo $row1 ['color']; ?> 40%, #ffffff00 100%)"></div>
             <div class="wave-divider"></div>
         </div>
 
@@ -85,7 +111,7 @@ $caption_array = explode('|', $row2['section_caption']);
             <div class="grid-con">
                 <h2 class="col-span-full m-col-start-2 m-col-end-7">Project Overview</h2>
 
-                <p class="col-span-full m-col-start-2 m-col-end-12"><?php echo $row ['overview']; ?></p>
+                <p class="col-span-full m-col-start-2 m-col-end-12"><?php echo $row1 ['overview']; ?></p>
             </div>
         </div>
 
@@ -94,30 +120,30 @@ $caption_array = explode('|', $row2['section_caption']);
                 <h2 class="col-span-full m-col-start-2 m-col-end-7">Process</h2>
 
                 <?php 
-                    for($i = 0; $i < count($description_array); $i++) {
+                if (!empty($title_array) && !empty($desc_array) && !empty($file_array) && !empty($file_desc_array)) {
+                    for($i = 0; $i < count($desc_array); $i++) {
 
-                        echo '<h3 class="col-span-full m-col-start-2 m-col-end-7">'.$subtitle_array[$i].'</h3>
+                        echo '<h3 class="col-span-full m-col-start-2 m-col-end-7">'.$title_array[$i].'</h3>
 
-                        <p class="col-span-full m-col-start-2 m-col-end-12">'.$description_array[$i].'</p>
+                        <p class="col-span-full m-col-start-2 m-col-end-12">'.$desc_array[$i].'</p>';
 
-                        <div class="col-span-full m-col-start-3 m-col-end-11 media-con">
-                        <img class="media border" src="images/'.$file_array[$i].'" alt="'.$caption_array[$i].'">
-                        </div>';
+                        $file_extension = strtolower(pathinfo($file_array[$i], PATHINFO_EXTENSION));
+
+                        if ($file_extension == 'jpg' || $file_extension == 'png') {
+                            echo '<div class="col-span-full m-col-start-3 m-col-end-11 media-con">
+                            <img class="media border" src="images/'.$file_array[$i].'" alt="'.$file_desc_array[$i].'">
+                            </div>';
+                        } else {
+                            echo '<div class="col-span-full m-col-start-3 m-col-end-11 video-con" id="video">
+                                <video class="media border" src="videos/'.$file_array[$i].'" alt="'.$file_desc_array[$i].'"></video>
+                            </div>';
+                        }
                     }
+                } else {
+                    echo '<p class="col-span-full m-col-start-2 m-col-end-12">The process is undocumented at the moment.</p>';
+                }
                 ?>
 
-            </div>
-        </div>
-
-        <div class="full-width-grid-con case-study slide-up" id="video">
-            <div class="grid-con">
-                <h3 class="col-span-full m-col-start-2 m-col-end-7"><?php echo $row ['video_subtitle']; ?></h3>
-
-                <p class="col-span-full m-col-start-2 m-col-end-12"><?php echo $row ['video_description']; ?></p>
-
-                <div class="col-span-full m-col-start-3 m-col-end-11 video-con" id="case-video-con">
-                    <video class="media border" id="case-video" src="videos/<?php echo $row ['video_file']?>" alt="<?php echo $row ['project_title']; ?>'s commercial video">
-                </div>
             </div>
         </div>
 
@@ -125,10 +151,10 @@ $caption_array = explode('|', $row2['section_caption']);
             <div class="grid-con">
                 <h2 class="col-span-full m-col-start-2 m-col-end-7">Outcome</h2>
 
-                <p class="col-span-full m-col-start-2 m-col-end-12"><?php echo $row ['outcome']; ?></p>
+                <p class="col-span-full m-col-start-2 m-col-end-12"><?php echo $row1 ['outcome']; ?></p>
 
                 <div class="col-span-full m-col-start-2 m-col-end-12 media-con">
-                    <img class="media border" src="images/<?php echo $row ['outcome_image']; ?>" alt="<?php echo $row ['project_title']; ?>'s final result.">
+                    <img class="media border" src="images/<?php echo $row1 ['outcome_image']; ?>" alt="<?php echo $row1 ['title']; ?>'s final result.">
                 </div>
 
                 <a class="col-start-1 col-end-3 m-col-start-2 m-col-end-6 back" href="index.php">
@@ -156,11 +182,6 @@ $caption_array = explode('|', $row2['section_caption']);
             <p class="col-span-full m-col-start-5 m-col-end-9">@2024 Jenifer Quelali</p>
         </div>
     </footer>
-    
-    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script defer src="js/main.js"></script>
-
 </body>
 
 </html>

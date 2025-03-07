@@ -2,16 +2,19 @@
 <html lang="en">
 
 <?php
+
 require_once('includes/connect.php');
 
-$query = 'SELECT projects.id AS project, project_title, project_description, project_image, color FROM projects';
+$stmt = $connection->prepare("SELECT projects.id AS project, title, description, thumbnail, color FROM projects");
+$stmt->execute();
 
-$results = mysqli_query($connect, $query);
 ?>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.svg">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,6 +27,10 @@ $results = mysqli_query($connect, $query);
     
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/grid.css">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script type="module" defer src="js/index.js"></script>
 
     <title>Jenifer Quelali - Portfolio</title>
 </head>
@@ -94,17 +101,18 @@ $results = mysqli_query($connect, $query);
                 <div class="col-span-full m-col-start-2 m-col-end-12 project-flex">
 
                     <?php 
-                    while($row = mysqli_fetch_array($results)) {
-
+                    while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                         echo '<div class="project-card slide-up">
-                                <img class="border" src="images/'.$row['project_image'].'" alt="'.$row['project_image'].' icon">
+                                <img class="border" src="images/'.$row['thumbnail'].'" alt="'.$row['title'].' icon">
 
-                                <h3>'.$row['project_title'].'</h3>
-                                <p>'.$row['project_description'].'</p>
+                                <h3>'.$row['title'].'</h3>
+                                <p>'.$row['description'].'</p>
                                 
                                 <a class="point" style="color:'.$row['color'].'" href="case-study.php?id='.$row['project'].'">Read Case Study<i class="fa-solid fa-arrow-right-long"></i></a>
                             </div>';
                         }
+
+                        $stmt = null;
                     ?>
                 </div>
 
@@ -127,7 +135,7 @@ $results = mysqli_query($connect, $query);
                     when I’m free, and I wish to travel around the world when I have the resources to. I love music, and hope
                      that one day I’ll have time to learn music making as well!</p>
 
-                <a class="col-span-full m-col-start-5 m-col-end-9 download button shadow">Download CV</a>
+                <a class="col-span-full m-col-start-5 m-col-end-9 download button shadow" href="assets/resume.pdf" download="resume.pdf">Download CV</a>
             </div>
 
             <div class="wave-bc"></div>
@@ -139,8 +147,11 @@ $results = mysqli_query($connect, $query);
             </div>
         </div>
 
-        <div class="full-width-grid-con fade" id="contact">
-            <div class="contact-border">
+        <div class="full-width-grid-con" id="contact">
+
+            <div class="purple-bc slide-down-delay"></div>
+
+            <div class="contact-border slide-up">
                 <div class="grid-con background text-align">
                     <h2 class="col-span-full m-col-start-2 m-col-end-7">Contact</h2>
     
@@ -148,11 +159,14 @@ $results = mysqli_query($connect, $query);
     
                     <div class="col-span-full m-col-start-2 m-col-end-7 email"><img src="images/mail.svg"  alt="A mail symbol inside a circle"><a>j_quelali@gmail.com</a></div>
                     
-                    <form class="col-span-full m-col-start-7 m-col-end-12 form" method="post" action="contact.php">
-                        <input class="type" id="name" type="text" name="full_name" placeholder="Name">
+                    <form class="col-span-full m-col-start-7 m-col-end-12 form" id="contact-form" action="../admin/sendmail.php">
+                        <input class="type" id="name" type="text" name="name" placeholder="Name">
                         <input class="type" id="email" type="text" name="email" placeholder="Email">
-                        <input class="type message" id="message" type="text" name="msg" placeholder="Message">
+                        <input class="type message" id="message" type="text" name="message" placeholder="Message">
+                        
                         <input class="submit button shadow" type="submit" value="Send">
+
+                        <section id="feedback"><p>*Please fill out all required sections.</p></section>
                     </form>
                 </div>
             </div>
@@ -177,11 +191,6 @@ $results = mysqli_query($connect, $query);
             <p class="col-span-full m-col-start-5 m-col-end-9">@2024 Jenifer Quelali</p>
         </div>
     </footer>
-    
-    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script defer src="js/main.js"></script>
-
 </body>
 
 </html>
