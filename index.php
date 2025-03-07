@@ -135,7 +135,7 @@ $stmt->execute();
                     when I’m free, and I wish to travel around the world when I have the resources to. I love music, and hope
                      that one day I’ll have time to learn music making as well!</p>
 
-                <a class="col-span-full m-col-start-5 m-col-end-9 download button shadow" href="assets/resume.pdf" download="resume.pdf">Download CV</a>
+                <a class="col-span-full m-col-start-5 m-col-end-9 download button shadow" href="download/resume.pdf" download="resume.pdf">Download CV</a>
             </div>
 
             <div class="wave-bc"></div>
