@@ -1,6 +1,6 @@
 @use '../abstracts/variables' as v;
 
-h1, h2, h3 {
+h1, h2, h3, label {
     font-family: v.$heading-font-family;
 }
 
@@ -60,6 +60,23 @@ p, a {
     line-height: 32px;
 }
 
+label {
+    font-weight: 400;
+}
+
 #menu.open a {
     font-size: 30pt;
+}
+
+#contact {
+    #feedback p {
+        color: v.$black;
+        text-align: right;
+        font-size: 12pt;
+        margin-bottom: 10px;
+    }
+}
+
+.project-list p {
+    font-size: 16pt;
 }
