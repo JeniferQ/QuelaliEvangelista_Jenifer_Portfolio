@@ -51,44 +51,6 @@
     }
 }
 
-// Hero Backgrounds
-
-#kavorka {
-    background: url(../images/kavorka-hero.jpg) repeat;
-
-    .gradient {
-        background: linear-gradient(180deg, #C20943 25%, #ffffff00 100%);
-
-        @media (min-width: 768px) {
-            background: linear-gradient(90deg, #C20943 40%, #ffffff00 100%);
-        }
-    }
-}
-
-#drnut {
-    background: url(../images/drnut-hero.jpg) repeat;
-
-    .gradient {
-        background: linear-gradient(180deg, #C0070B 25%, #ffffff00 100%);
-
-        @media (min-width: 768px) {
-            background: linear-gradient(90deg, #C0070B 40%, #ffffff00 100%);
-        }
-    }
-}
-
-#comet {
-    background: url(../images/comet-hero.jpg) repeat;
-
-    .gradient {
-        background: linear-gradient(180deg, #090E31 25%, #ffffff00 100%);
-
-        @media (min-width: 768px) {
-            background: linear-gradient(90deg, #090E31 40%, #ffffff00 100%);
-        }
-    }
-}
-
 // Sections
 
 #overview {

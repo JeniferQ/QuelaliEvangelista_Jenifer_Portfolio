@@ -5,6 +5,9 @@
 }
 
 .project-list {
+    @include a.flex;
+    @include a.flex-wrap;
+
     margin: 10px 30px 30px 30px;
     max-width: 600px;
     display: flex;

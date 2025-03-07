@@ -3,15 +3,21 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-body {
+html, body {
     background-color: a.$white;
+    position: relative;
     overflow-x: hidden;
 }
 
 html {
     scroll-behavior: smooth;
+
+    @supports not (scroll-behavior: smooth) {
+        scroll-behavior: auto;
+    }
   }
 
 .hidden {

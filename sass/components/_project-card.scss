@@ -1,6 +1,9 @@
 @use '../abstracts' as a;
 
-.project-flex{
+.project-flex {
+    @include a.flex;
+    @include a.flex-wrap;
+    
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -37,6 +40,7 @@
 
     .point:hover i {
         animation: pointRight 1s ease infinite;
+        -webkit-animation: pointRight 1s ease infinite;
     }
     
     @keyframes pointRight {
