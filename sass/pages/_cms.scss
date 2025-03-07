@@ -1,0 +1,41 @@
+@use '../abstracts' as a;
+
+.project-list:first-of-type {
+    margin-top: 40px;
+}
+
+.project-list {
+    margin: 10px 30px 30px 30px;
+    max-width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+
+    p {
+        font-weight: 600;
+        width: 100%;
+    }
+
+    .cms-btn {
+        margin: 0;
+    }
+}
+
+.cms-btn {
+    margin: 30px;
+    padding: 10px 30px;
+    border-radius: 20px;
+    color: a.$purple;
+    border: 1.5px solid a.$purple;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.cms-btn:hover {
+    background-color: a.$lilac;
+}
+
+.vertical-space {
+    margin: 80px 0;
+}
