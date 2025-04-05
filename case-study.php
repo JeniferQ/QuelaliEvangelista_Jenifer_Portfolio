@@ -100,7 +100,7 @@ $stmt2 = null;
 
                 <p class="col-span-full m-col-start-2 m-col-end-7"><?php echo $row1 ['brief']; ?></p>
 
-                <a class="col-span-full m-col-start-2 m-col-end-4 button shadow" href="<?php echo $row1 ['link']; ?>">View Result</a>
+                <a class="col-span-full m-col-start-2 m-col-end-4 button shadow" href="<?php echo $row1 ['link']; ?>" target="_blank">View Result</a>
             </div>
 
             <div class="gradient" style="background: linear-gradient(90deg, <?php echo $row1 ['color']; ?> 40%, #ffffff00 100%)"></div>
@@ -170,11 +170,11 @@ $stmt2 = null;
 
         <div class="grid-con text-align">
             <div class="col-span-full m-col-start-4 m-col-end-10 icons">
-                <a href="https://www.linkedin.com/in/jenifer-quelali-evangelista/">
+                <a href="https://www.linkedin.com/in/jenifer-quelali-evangelista/" target="_blank">
                     <img src="images/linkedin-in-brands-solid.svg" alt="Linkedin logo">
                 </a>
 
-                <a href="https://github.com/JeniferQ">
+                <a href="https://github.com/JeniferQ" target="_blank">
                     <img src="images/github-brands-solid.svg" alt="Github logo">
                 </a>
             </div>

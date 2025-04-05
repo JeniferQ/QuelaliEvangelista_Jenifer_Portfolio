@@ -179,11 +179,11 @@ $stmt->execute();
 
         <div class="grid-con text-align">
             <div class="col-span-full m-col-start-4 m-col-end-10 icons">
-                <a href="https://www.linkedin.com/in/jenifer-quelali-evangelista/">
+                <a href="https://www.linkedin.com/in/jenifer-quelali-evangelista/" target="_blank">
                     <img src="images/linkedin-in-brands-solid.svg" alt="Linkedin logo">
                 </a>
 
-                <a href="https://github.com/JeniferQ">
+                <a href="https://github.com/JeniferQ" target="_blank">
                     <img src="images/github-brands-solid.svg" alt="Github logo">
                 </a>
             </div>
